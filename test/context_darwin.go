@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+//go:build darwin
 // +build darwin
 
 package test
@@ -40,7 +41,7 @@ import "C"
 import (
 	"runtime"
 
-	"github.com/goxjs/gl"
+	"github.com/fyne-io/gl-js"
 )
 
 // contextGL holds a copy of the OpenGL Context from thread-local storage.

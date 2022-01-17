@@ -18,15 +18,15 @@ Installation
 ------------
 
 ```bash
-go get -u github.com/goxjs/gl/...
-GOARCH=js go get -u -d github.com/goxjs/gl/...
+go get -u github.com/fyne-io/gl-js/...
+GOARCH=js go get -u -d github.com/fyne-io/gl-js/...
 ```
 
 Usage
 -----
 
 This OpenGL binding has a ContextWatcher, which implements [glfw.ContextWatcher](https://godoc.org/github.com/goxjs/glfw#ContextWatcher)
-interface. Recommended usage is with github.com/goxjs/glfw package, which accepts a ContextWatcher in its Init, and takes on the responsibility
+interface. Recommended usage is with github.com/fyne-io/glfw-js package, which accepts a ContextWatcher in its Init, and takes on the responsibility
 of notifying it when context is made current or detached.
 
 ```Go

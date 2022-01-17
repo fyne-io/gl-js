@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+//go:build darwin || (linux && !android)
 // +build darwin linux,!android
 
 // TODO(crawshaw): Run tests on other OSs when more contexts are supported.
@@ -20,8 +21,8 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/goxjs/gl"
-	"github.com/goxjs/gl/glutil"
+	"github.com/fyne-io/gl-js"
+	"github.com/fyne-io/gl-js/glutil"
 	"golang.org/x/mobile/event/size"
 	"golang.org/x/mobile/exp/f32"
 	"golang.org/x/mobile/geom"

@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+//go:build linux && !android
 // +build linux,!android
 
 package test
@@ -85,7 +86,7 @@ import "C"
 import (
 	"runtime"
 
-	"github.com/goxjs/gl"
+	"github.com/fyne-io/gl-js"
 )
 
 type contextGL struct {
