@@ -237,30 +237,11 @@ func CompileShader(s Shader) {
 }
 
 func CompressedTexImage2D(target Enum, level int, internalformat Enum, width, height, border int, data interface{}) {
-	c.Call(
-		"compressedTexImage2D",
-		int(target),
-		level,
-		int(internalformat),
-		width,
-		height,
-		border,
-		SliceToTypedArray(data),
-	)
+	c.Call("compressedTexImage2D", int(target), level, int(internalformat), width, height, border, SliceToTypedArray(data))
 }
 
 func CompressedTexSubImage2D(target Enum, level, xoffset, yoffset, width, height int, format Enum, data interface{}) {
-	c.Call(
-		"compressedTexSubImage2D",
-		int(target),
-		level,
-		xoffset,
-		yoffset,
-		width,
-		height,
-		int(format),
-		SliceToTypedArray(data),
-	)
+	c.Call("compressedTexSubImage2D", int(target), level, xoffset, yoffset, width, height, int(format), SliceToTypedArray(data))
 }
 
 func CopyTexImage2D(target Enum, level int, internalformat Enum, x, y, width, height, border int) {
@@ -683,27 +664,10 @@ func StencilOpSeparate(face, sfail, dpfail, dppass Enum) {
 }
 
 func TexImage2D(target Enum, level int, width, height int, format Enum, ty Enum, data interface{}) {
-	c.Call(
-		"texImage2D",
-		int(target),
-		level,
-		int(format),
-		width,
-		height,
-		0,
-		int(format),
-		int(ty),
-		SliceToTypedArray(data),
-	)
+	c.Call("texImage2D", int(target), level, int(format), width, height, 0, int(format), int(ty), SliceToTypedArray(data))
 }
 
-func TexImage2DMultisample(
-	target Enum,
-	samples int,
-	internalformat Enum,
-	width, height int,
-	fixedsamplelocations bool,
-) {
+func TexImage2DMultisample(target Enum, samples int, internalformat Enum, width, height int, fixedsamplelocations bool) {
 	println("TexImage2DMultisample: not available on WebGL.")
 }
 
