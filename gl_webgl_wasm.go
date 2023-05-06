@@ -10,7 +10,6 @@ package gl
 import (
 	"encoding/binary"
 	"fmt"
-	"log"
 	"math"
 	"reflect"
 	"runtime"
