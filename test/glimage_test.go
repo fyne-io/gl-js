@@ -14,7 +14,6 @@ import (
 	"image/color"
 	"image/draw"
 	"image/png"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"sync"
@@ -138,7 +137,7 @@ func TestImage(t *testing.T) {
 
 	if !imageEq(got, want) {
 		// Write out the image we got.
-		f, err = ioutil.TempFile("", "testpattern-window-got")
+		f, err = os.CreateTemp("", "testpattern-window-got")
 		if err != nil {
 			t.Fatal(err)
 		}
