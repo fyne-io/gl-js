@@ -3,8 +3,6 @@
 // license that can be found in the LICENSE file.
 
 //go:build (darwin || linux) && (arm || arm64)
-// +build darwin linux
-// +build arm arm64
 
 package gl
 

@@ -1,4 +1,4 @@
-// +build !js
+//go:build !js
 
 package gl
 
@@ -330,6 +330,7 @@ func DeleteTexture(v Texture) {
 // DepthFunc sets the function used for depth buffer comparisons.
 //
 // Valid fn values:
+//
 //	NEVER
 //	LESS
 //	EQUAL
@@ -670,6 +671,7 @@ func GetShaderSource(s Shader) string {
 // GetString reports current GL state.
 //
 // Valid name values:
+//
 //	EXTENSIONS
 //	RENDERER
 //	SHADING_LANGUAGE_VERSION
