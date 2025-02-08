@@ -3,7 +3,6 @@
 // license that can be found in the LICENSE file.
 
 //go:build darwin || (linux && !android)
-// +build darwin linux,!android
 
 // TODO(crawshaw): Run tests on other OSs when more contexts are supported.
 
@@ -15,7 +14,6 @@ import (
 	"image/color"
 	"image/draw"
 	"image/png"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"sync"
@@ -90,10 +88,10 @@ func TestImage(t *testing.T) {
 
 	// All-integer right-angled triangles offsetting the
 	// box: 24-32-40, 12-16-20.
-	ptTopLeft := geom.Point{0, 24}
-	ptTopRight := geom.Point{32, 0}
-	ptBottomLeft := geom.Point{12, 24 + 16}
-	ptBottomRight := geom.Point{12 + 32, 16}
+	ptTopLeft := geom.Point{X: 0, Y: 24}
+	ptTopRight := geom.Point{X: 32, Y: 0}
+	ptBottomLeft := geom.Point{X: 12, Y: 24 + 16}
+	ptBottomRight := geom.Point{X: 12 + 32, Y: 16}
 	m.Draw(cfg, ptTopLeft, ptTopRight, ptBottomLeft, b)
 
 	// For unknown reasons, a windowless OpenGL context renders upside-
@@ -139,7 +137,7 @@ func TestImage(t *testing.T) {
 
 	if !imageEq(got, want) {
 		// Write out the image we got.
-		f, err = ioutil.TempFile("", "testpattern-window-got")
+		f, err = os.CreateTemp("", "testpattern-window-got")
 		if err != nil {
 			t.Fatal(err)
 		}
