@@ -6,8 +6,6 @@ permissions:
 jobs:
   static_analysis:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
 
     steps:
     - uses: actions/checkout@v4
@@ -16,22 +14,6 @@ jobs:
     - uses: actions/setup-go@v5
       with:
         go-version: 'stable'
-
-    - name: Get dependencies
-      run: >-
-        sudo apt-get update &&
-        sudo apt-get install
-        gcc
-        libegl1-mesa-dev
-        libgl1-mesa-dev
-        libgles2-mesa-dev
-        libx11-dev
-        xorg-dev
-        xvfb
-        language-pack-en
-
-    - name: Set environment variable LANG
-      run: export LANG=en_EN.UTF-8
 
     - name: Install analysis tools
       run: |
