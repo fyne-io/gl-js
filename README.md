@@ -1,4 +1,6 @@
-# gl [![Build Status](https://travis-ci.org/goxjs/gl.svg?branch=master)](https://travis-ci.org/goxjs/gl) [![GoDoc](https://godoc.org/github.com/fyne-io/gl-js?status.svg)](https://godoc.org/github.com/fyne-io/gl-js)
+[![GoDoc](https://godoc.org/github.com/fyne-io/gl-js?status.svg)](https://godoc.org/github.com/fyne-io/gl-js)
+
+# GL
 
 Package gl is a Go cross-platform binding for OpenGL, with an OpenGL ES 2-like API.
 
