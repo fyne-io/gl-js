@@ -392,7 +392,7 @@ func DrawArrays(mode Enum, first, count int) {
 //
 // http://www.khronos.org/opengles/sdk/docs/man3/html/glDrawElements.xhtml
 func DrawElements(mode Enum, count int, ty Enum, offset int) {
-	gl.DrawElements(uint32(mode), int32(count), uint32(ty), gl.PtrOffset(offset))
+	gl.DrawElementsWithOffset(uint32(mode), int32(count), uint32(ty), uintptr(offset))
 }
 
 // Enable enables various GL capabilities.
@@ -1217,7 +1217,7 @@ func VertexAttrib4fv(dst Attrib, src []float32) {
 //
 // http://www.khronos.org/opengles/sdk/docs/man3/html/glVertexAttribPointer.xhtml
 func VertexAttribPointer(dst Attrib, size int, ty Enum, normalized bool, stride, offset int) {
-	gl.VertexAttribPointer(uint32(dst.Value), int32(size), uint32(ty), normalized, int32(stride), gl.PtrOffset(offset))
+	gl.VertexAttribPointerWithOffset(uint32(dst.Value), int32(size), uint32(ty), normalized, int32(stride), uintptr(offset))
 }
 
 // Viewport sets the viewport, an affine transformation that
