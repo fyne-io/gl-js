@@ -118,7 +118,7 @@ func TestImage(t *testing.T) {
 	drawCross(got, int(ptBottomRight.X.Px(cfg.PixelsPerPt)), int(ptBottomRight.Y.Px(cfg.PixelsPerPt)))
 	drawCross(got, pixW-1, pixH-1)
 
-	var wantPath = filepath.Join("testdata", "testpattern-window.png")
+	wantPath := filepath.Join("testdata", "testpattern-window.png")
 	f, err = os.Open(wantPath)
 	if err != nil {
 		t.Fatal(err)
