@@ -558,7 +558,7 @@ func TexImage2DMultisample(target Enum, samples int, internalformat Enum, width,
 }
 
 func TexSubImage2D(target Enum, level int, x, y, width, height int, format, ty Enum, data any) {
-	c.Call("texSubImage2D", int(target), level, x, y, width, height, format, int(ty), SliceToTypedArray(data))
+	c.Call("texSubImage2D", int(target), level, x, y, width, height, int(format), int(ty), SliceToTypedArray(data))
 }
 
 func TexParameterf(target, pname Enum, param float32) {
